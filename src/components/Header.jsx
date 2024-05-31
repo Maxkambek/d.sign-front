@@ -1,20 +1,32 @@
-import video3 from "../assets/vide.mp4";
+// import video3 from "../assets/video_2023.mp4";
+
+import Aos from "aos";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const nav = useNavigate();
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      duration: 2500,
+    });
+  }, []);
   return (
     <>
       <div className="Header">
         <div className="container">
           <div className="header_box">
-            <div className="header_text_box">
+            <div data-aos="fade-right" className="header_text_box">
               <div className="header_h">
-                We create websites, develop brands & build eCommerce experiences
+                We create individual design, develop brands & build web apps
+                experiences
               </div>
               <div className="header_p">
-                for ambitious companies since 2017.
+                for ambitious companies since 2021.
               </div>
             </div>
-            <div className="header_btn_box">
+            <div data-aos="fade-down" className="header_btn_box">
               <div className="js-circle circle-fill"></div>
               <svg
                 width="176"
@@ -31,14 +43,28 @@ const Header = () => {
                   strokeWidth="0.5"
                 />
               </svg>
-              <div className="b-title">See Our Work</div>
+              <div onClick={() => nav("/works")} className="b-title">
+                See Our Work
+              </div>
             </div>
           </div>
-          <div className="header_video_box">
+          <div
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500"
+            data-aos-delay="1200"
+            className="header_video_box"
+          >
             <video loop autoPlay muted id="header_video">
-              <source src={video3} type="video/mp4" />
+              <source
+                src="https://move-creative.com/wp-content/uploads/2023/06/move-showreel-preview_4.mp4"
+                type="video/mp4"
+              />
             </video>
-            <div className="video_font_btn">More</div>
+            <div onClick={() => nav("/works")} className="video_font_btn">
+              More
+            </div>
           </div>
         </div>
       </div>

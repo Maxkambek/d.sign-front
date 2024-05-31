@@ -1,63 +1,66 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { API_PATH } from "../constants/constant";
+import Aos from "aos";
+
 const OurWorks = () => {
+  const nav = useNavigate();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios.get(API_PATH + "main/project/").then((res) => {
+      setData(res.data);
+    });
+  }, []);
+  useEffect(() => {
+    Aos.init({
+      once: true,
+      duration: 1500,
+    });
+  }, []);
   return (
     <>
       <div className="OurWorks">
         <div className="container">
-          <div className="ourworks_name">Our Work</div>
-          <div className="row my_row">
-            <div className="">
-              <div className="our_work_box">
-                <div className="filter"></div>
-                <img className="w-100" src="/img/aaa.jpg" alt="" />
-                <div className="work_category">Branding</div>
-                <div className="work_name">Pilot Expo</div>
-              </div>
-            </div>
-            <div className="mt-5">
-              <div className="our_work_box">
-                <div className="filter"></div>
-                <img className="w-100" src="/img/aaa.jpg" alt="" />
-                <div className="work_category">Branding</div>
-                <div className="work_name">Pilot Expo</div>
-              </div>
-            </div>
-            <div className="">
-              <div className="our_work_box">
-                <div className="filter"></div>
-                <img className="w-100" src="/img/aaa.jpg" alt="" />
-                <div className="work_category">Branding</div>
-                <div className="work_name">Pilot Expo</div>
-              </div>
-            </div>
-            <div className="">
-              <div className="our_work_box">
-                <div className="filter"></div>
-                <img className="w-100" src="/img/aaa.jpg" alt="" />
-                <div className="work_category">Branding</div>
-                <div className="work_name">Pilot Expo</div>
-              </div>
-            </div>
-            <div className="mt-5">
-              <div className="our_work_box">
-                <div className="filter"></div>
-                <img className="w-100" src="/img/aaa.jpg" alt="" />
-                <div className="work_category">Branding</div>
-                <div className="work_name">Pilot Expo</div>
-              </div>
-            </div>
-            <div className="">
-              <div className="our_work_box">
-                <div className="filter"></div>
-                <img className="w-100" src="/img/aaa.jpg" alt="" />
-                <div className="work_category">Branding</div>
-                <div className="work_name">Pilot Expo</div>
-              </div>
-            </div>
+          <div data-aos="zoom-in-up" className="ourworks_name">
+            Our Work
           </div>
+
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+            className="row"
+          >
+            {data?.map((item, index) => (
+              <div
+                key={index}
+                className={`col-lg-4 col-md-6 mt-5 ${index === 1 || index === 4 ? "mt-5" : ""}`}
+              >
+                <div className="our_work_box">
+                  <div className="filter"></div>
+                  {item.image ? (
+                    <>
+                      <img className="w-100" src={item.image} alt="" />
+                    </>
+                  ) : (
+                    <>
+                      <video loop autoPlay muted>
+                        <source src={item.file} type="video/mp4" />
+                      </video>
+                    </>
+                  )}
+                  <div className="work_category">{item.service.name}</div>
+                  <div className="work_name">{item.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div className="our_work_footer">
             <div className="button-row">
               <small>NEXT</small>
-              <div className="title">
+              <div onClick={() => nav("/works")} className="title">
                 Explore more
                 <svg
                   width="31"
