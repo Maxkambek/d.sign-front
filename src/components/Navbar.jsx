@@ -52,7 +52,7 @@ const Navbar = () => {
                 to="/works"
                 className={`nav_a ${location.pathname === "/" ? "active" : ""}`}
               >
-                Works
+                {getText("Works")}
               </Link>
               <Link
                 onClick={() => setBurger(!burger)}
@@ -61,7 +61,7 @@ const Navbar = () => {
                   location.pathname === "/offers" ? "active" : ""
                 }`}
               >
-                About us
+                {getText("About us")}
               </Link>
               <Link
                 onClick={() => setBurger(!burger)}
@@ -70,7 +70,7 @@ const Navbar = () => {
                   location.pathname === "/visa" ? "active" : ""
                 }`}
               >
-                Contact
+                {getText("Contact")}
               </Link>
               <div className="lang_box d-lg-none d-flex">
                 <select
@@ -99,14 +99,14 @@ const Navbar = () => {
                   name=""
                   id=""
                 >
+                  <option selected={getLanguage() === "en"} value="en">
+                    En
+                  </option>
                   <option selected={getLanguage() === "uz"} value="uz">
                     Uz
                   </option>
                   <option selected={getLanguage() === "ru"} value="ru">
                     Ру
-                  </option>
-                  <option selected={getLanguage() === "en"} value="en">
-                    En
                   </option>
                 </select>
               </div>

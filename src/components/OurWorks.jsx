@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_PATH } from "../constants/constant";
 import Aos from "aos";
+import { getText } from "../locale";
 
 const OurWorks = () => {
   const nav = useNavigate();
@@ -24,7 +25,7 @@ const OurWorks = () => {
       <div className="OurWorks">
         <div className="container">
           <div data-aos="zoom-in-up" className="ourworks_name">
-            Our Work
+            {getText("Our Work")}
           </div>
 
           <div
@@ -59,9 +60,9 @@ const OurWorks = () => {
 
           <div className="our_work_footer">
             <div className="button-row">
-              <small>NEXT</small>
+              <small>{getText("NEXT")}</small>
               <div onClick={() => nav("/works")} className="title">
-                Explore more
+                {getText("Explore more")}
                 <svg
                   width="31"
                   height="23"

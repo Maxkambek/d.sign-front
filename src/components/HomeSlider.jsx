@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { API_PATH } from "../constants/constant";
+import { getText } from "../locale";
 
 const HomeSlider = () => {
   const nav = useNavigate();
@@ -26,10 +27,7 @@ const HomeSlider = () => {
     <>
       <div className="HomeSlider">
         <div className="container">
-          <div className="home_slider_name">
-            Since 2021 we’ve been working with amazing organisations to create
-            meaningful results.
-          </div>
+          <div className="home_slider_name">{getText("h_slider_1")}</div>
         </div>
         <div className="slider_box">
           <Swiper
@@ -147,9 +145,9 @@ const HomeSlider = () => {
           <div className="f_bottom"></div>
         </div>
         <div className="h_about_text_box">
-          <div className="text_box_h">LET’S BUILD THE FUTURE TOGETHER</div>
+          <div className="text_box_h">{getText("LET’S BUILD THE FUTURE TOGETHER")}</div>
           <button className="myBtn" onClick={() => nav("/contact")}>
-            Contact Us
+            {getText("Contact Us")}
           </button>
         </div>
       </div>

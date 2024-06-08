@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { getText } from "../locale";
 
 const HomeAbout = () => {
   const nav = useNavigate();
@@ -11,15 +12,15 @@ const HomeAbout = () => {
               <div className="home_about_right">
                 <img src="/img/chaq.svg" alt="" />
                 <div className="h_about_name">
-                  We D.sign Creative and Digital
+                  {getText("We D.sign Creative and Digital")}
                 </div>
                 <div className="h_about_p">
-                  We create magical digital ideas, products and experiences.
+                  {getText(`We create magical digital ideas, products and experiences.
                   We’re called D.sign because we aim to bring you forward,
-                  creative and digital.
+                  creative and digital.`)}
                 </div>
                 <div onClick={() => nav("/about-us")} className="h_about_btn">
-                  About Us
+                  {getText("About us")}
                 </div>
               </div>
             </div>

@@ -3,6 +3,7 @@
 import Aos from "aos";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { getText } from "../locale";
 
 const Header = () => {
   const nav = useNavigate();
@@ -19,11 +20,12 @@ const Header = () => {
           <div className="header_box">
             <div data-aos="fade-right" className="header_text_box">
               <div className="header_h">
-                We create individual design, develop brands & build web apps
-                experiences
+                {getText(
+                  "We create individual design, develop brands & build web apps experiences"
+                )}
               </div>
               <div className="header_p">
-                for ambitious companies since 2021.
+                {getText("for ambitious companies since 2021.")}
               </div>
             </div>
             <div data-aos="fade-down" className="header_btn_box">
@@ -44,7 +46,7 @@ const Header = () => {
                 />
               </svg>
               <div onClick={() => nav("/works")} className="b-title">
-                See Our Work
+                {getText("See Our Work")}
               </div>
             </div>
           </div>

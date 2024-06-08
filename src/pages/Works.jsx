@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { API_PATH } from "../constants/constant";
 import axios from "axios";
 import Aos from "aos";
+import { getText } from "../locale";
 
 const Works = () => {
   const nav = useNavigate();
@@ -33,12 +34,11 @@ const Works = () => {
         <div className="container">
           <div className="works_header">
             <div data-aos="fade-right" className="works_right">
-              <div className="right_h">Featured work</div>
-              <div className="right_p">Latest and Greatest</div>
+              <div className="right_h">{getText("work_1")}</div>
+              <div className="right_p">{getText("work_2")}</div>
             </div>
             <div data-aos="fade-left" className="works_left">
-              Our Works are created easy to understand, aesthetic, interactive
-              and functional.
+              {getText("work_3")}
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Works = () => {
                   filter === 0 ? "active" : ""
                 }`}
               >
-                All categories
+                {getText("work_4")}
               </div>
               {service?.map((item, index) => (
                 <div
@@ -127,9 +127,11 @@ const Works = () => {
             <div className="f_bottom"></div>
           </div>
           <div className="h_about_text_box">
-            <div className="text_box_h">LET’S BUILD THE FUTURE TOGETHER</div>
+            <div className="text_box_h">
+              {getText("LET’S BUILD THE FUTURE TOGETHER")}
+            </div>
             <div onClick={() => nav("/contact")} className="text_box_btn">
-              Contact Us
+              {getText("Contact Us")}
             </div>
           </div>
         </div>

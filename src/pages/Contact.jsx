@@ -1,3 +1,5 @@
+import { getText } from "../locale";
+
 const Contact = () => {
   return (
     <>
@@ -7,17 +9,15 @@ const Contact = () => {
             <div className="row">
               <div className="col-lg-6">
                 <div className="contact_header_box">
-                  <div className="contact_header_h">Contact Us</div>
-                  <div className="contact_header_p">
-                    Contact us and start a project!
+                  <div className="contact_header_h">
+                    {getText("Contact Us")}
                   </div>
+                  <div className="contact_header_p">{getText("contact_1")}</div>
                 </div>
               </div>
               <div className="col-lg-6">
                 <div className="contact_header_box">
-                  <div className="contact_header_h">
-                    Let’s create something great together.
-                  </div>
+                  <div className="contact_header_h">{getText("contact_2")}</div>
                 </div>
               </div>
             </div>
@@ -27,15 +27,15 @@ const Contact = () => {
               <div className="col-lg-5">
                 <div className="contact_right">
                   <div className="input_wrap">
-                    <div className="label">{"What's your name?"}</div>
-                    <input type="text" placeholder="Your Name" />
+                    <div className="label">{getText("contact_3")}</div>
+                    <input type="text" placeholder={getText("contact_4")} />
                   </div>
                   <div className="input_wrap">
-                    <div className="label">Your Email address</div>
-                    <input type="text" placeholder="E-mail address" />
+                    <div className="label">{getText("contact_5")}</div>
+                    <input type="text" placeholder={getText("contact_6")} />
                   </div>
                   <div className="input_wrap">
-                    <div className="label">Your mobile tel</div>
+                    <div className="label">{getText("contact_7")}</div>
                     <input type="text" placeholder="Tel" />
                   </div>
                 </div>
@@ -43,14 +43,14 @@ const Contact = () => {
               <div className="col-lg-5">
                 <div className="contact_left">
                   <div className="text_area_box">
-                    <div className="area_label">Describe your project</div>
+                    <div className="area_label">{getText("contact_8")}</div>
                     <textarea
                       className="contact_text_area"
                       name=""
                       id=""
                     ></textarea>
                   </div>
-                  <div className="contact_btn">Send Request</div>
+                  <div className="contact_btn">{getText("contact_9")}</div>
                 </div>
               </div>
             </div>
@@ -88,7 +88,9 @@ const Contact = () => {
             <div className="f_bottom"></div>
           </div>
           <div className="h_about_text_box">
-            <div className="text_box_h">LET’S BUILD THE FUTURE TOGETHER</div>
+            <div className="text_box_h">
+              {getText("LET’S BUILD THE FUTURE TOGETHER")}
+            </div>
           </div>
         </div>
       </div>

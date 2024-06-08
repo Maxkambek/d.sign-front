@@ -1,3 +1,5 @@
+import { getText } from "../locale";
+
 const Footer = () => {
   return (
     <>
@@ -9,9 +11,7 @@ const Footer = () => {
               <div className="logo">
                 <img src="logo.svg" alt="" />
               </div>
-              <div className="footer_h">
-                We connect with ambitious brands and people.
-              </div>
+              <div className="footer_h">{getText("foot_1")}</div>
               <div className="footer_links">Instagram ------- Telegram</div>
             </div>
             <div className="footer_contact_box">

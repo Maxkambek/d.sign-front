@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { API_PATH } from "../constants/constant";
+import { getText } from "../locale";
 
 const AboutUs = () => {
   const nav = useNavigate();
@@ -28,21 +29,16 @@ const AboutUs = () => {
             <div className="row">
               <div className="col-lg-5">
                 <div className="about_right">
-                  <div className="right_h">Our Story</div>
+                  <div className="right_h">{getText("Our Story")}</div>
                   <div className="right_p">
-                    is driven by authenticity and understanding.
+                    {getText("is driven by authenticity and understanding")}
                   </div>
                 </div>
               </div>
               <div className="col-lg-7">
                 <div className="about_left">
-                  <div className="left_h">
-                    We are a passionate team of experts dedicated to creating
-                    your digital value.
-                  </div>
-                  <div className="left_p">
-                    We create magical digital ideas, products and experiences.
-                  </div>
+                  <div className="left_h">{getText("about_1")}</div>
+                  <div className="left_p">{getText("about_2")}</div>
                 </div>
               </div>
             </div>
@@ -98,12 +94,12 @@ const AboutUs = () => {
             </video>
           </div>
           <div className="how-we-do">
-            <div className="how-we-do-name">How We Do It</div>
+            <div className="how-we-do-name">{getText("about_3")}</div>
             <div className="row align-items-center">
               <div className="col-lg-6">
                 <div className="how-we-do-right">
                   <img src="/img/howwe.svg" alt="" />
-                  <div className="how-we-do-h">Creativity meets technology</div>
+                  <div className="how-we-do-h">{getText("about_4")}</div>
                 </div>
               </div>
 
@@ -112,45 +108,29 @@ const AboutUs = () => {
                   <div className="left-item">
                     <img src="/img/Discovery-Move-Digital.svg" alt="" />
                     <div className="left-text-box">
-                      <div className="how-we-do-h">Discovery</div>
-                      <div className="how-we-do-p">
-                        We create digital products using modern design
-                        techniques. The works we implement are easy to
-                        understand, aesthetic, interactive and functional.
-                      </div>
+                      <div className="how-we-do-h">{getText("about_5")}</div>
+                      <div className="how-we-do-p">{getText("about_6")}</div>
                     </div>
                   </div>
                   <div className="left-item">
                     <img src="/img/Direction-Move-Digital.svg" alt="" />
                     <div className="left-text-box">
-                      <div className="how-we-do-h">Discovery</div>
-                      <div className="how-we-do-p">
-                        We create digital products using modern design
-                        techniques. The works we implement are easy to
-                        understand, aesthetic, interactive and functional.
-                      </div>
+                      <div className="how-we-do-h">{getText("about_7")}</div>
+                      <div className="how-we-do-p">{getText("about_8")}</div>
                     </div>
                   </div>
                   <div className="left-item">
                     <img src="/img/Design-Move-Digital.svg" alt="" />
                     <div className="left-text-box">
-                      <div className="how-we-do-h">Discovery</div>
-                      <div className="how-we-do-p">
-                        We create digital products using modern design
-                        techniques. The works we implement are easy to
-                        understand, aesthetic, interactive and functional.
-                      </div>
+                      <div className="how-we-do-h">{getText("about_9")}</div>
+                      <div className="how-we-do-p">{getText("about_10")}</div>
                     </div>
                   </div>
                   <div className="left-item">
                     <img src="/img/Development-Move-Digital.svg" alt="" />
                     <div className="left-text-box">
-                      <div className="how-we-do-h">Discovery</div>
-                      <div className="how-we-do-p">
-                        We create digital products using modern design
-                        techniques. The works we implement are easy to
-                        understand, aesthetic, interactive and functional.
-                      </div>
+                      <div className="how-we-do-h">{getText("about_11")}</div>
+                      <div className="how-we-do-p">{getText("about_12")}</div>
                     </div>
                   </div>
                 </div>
@@ -193,9 +173,11 @@ const AboutUs = () => {
             <div className="f_bottom"></div>
           </div>
           <div className="h_about_text_box">
-            <div className="text_box_h">LET’S BUILD THE FUTURE TOGETHER</div>
+            <div className="text_box_h">
+              {getText("LET’S BUILD THE FUTURE TOGETHER")}
+            </div>
             <button className="myBtn" onClick={() => nav("/contact")}>
-              Contact Us
+              {getText("Contact Us")}
             </button>
           </div>
         </div>
